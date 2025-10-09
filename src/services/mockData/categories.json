@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "name": "Inbox",
+    "color": "#6366f1",
+    "taskCount": 0,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "name": "Work",
+    "color": "#8b5cf6",
+    "taskCount": 6,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "Id": 3,
+    "name": "Personal",
+    "color": "#ec4899",
+    "taskCount": 3,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "Id": 4,
+    "name": "Shopping",
+    "color": "#10b981",
+    "taskCount": 1,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]
