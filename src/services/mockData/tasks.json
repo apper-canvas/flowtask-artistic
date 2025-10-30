@@ -3,6 +3,7 @@
     "Id": 1,
     "title": "Review quarterly financial reports",
     "description": "Analyze Q4 financial statements and prepare summary for board meeting",
+    "notes": "## Key Focus Areas\n- Revenue analysis\n- Expense trends\n- Cash flow review\n\n**Action Items:**\n1. Compare with Q3 results\n2. Identify cost-saving opportunities",
     "priority": "high",
     "dueDate": "2024-01-25",
     "categoryId": "2",
@@ -10,10 +11,11 @@
     "createdAt": "2024-01-15T09:00:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 2,
     "title": "Update project documentation",
     "description": "Add API documentation and update README with latest changes",
+    "notes": "",
     "priority": "medium",
     "dueDate": "2024-01-22",
     "categoryId": "2",
@@ -21,10 +23,11 @@
     "createdAt": "2024-01-14T10:30:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 3,
     "title": "Prepare presentation slides",
     "description": "Create slides for client meeting next week covering project progress",
+    "notes": "### Slide Structure\n1. Executive Summary\n2. Milestones Achieved\n3. Upcoming Deliverables\n4. Q&A\n\n*Remember to include timeline visualization*",
     "priority": "high",
     "dueDate": "2024-01-24",
     "categoryId": "2",
@@ -32,10 +35,11 @@
     "createdAt": "2024-01-13T14:00:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 4,
     "title": "Schedule dentist appointment",
     "description": "Book regular checkup and cleaning appointment",
+    "notes": "",
     "priority": "low",
     "dueDate": "2024-01-30",
     "categoryId": "3",
@@ -43,10 +47,11 @@
     "createdAt": "2024-01-10T11:00:00.000Z",
     "completedAt": "2024-01-16T15:30:00.000Z"
   },
-  {
+{
     "Id": 5,
     "title": "Buy groceries",
     "description": "Milk, eggs, bread, vegetables, chicken, and snacks",
+    "notes": "",
     "priority": "medium",
     "dueDate": "2024-01-20",
     "categoryId": "4",
@@ -54,10 +59,11 @@
     "createdAt": "2024-01-16T08:00:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 6,
     "title": "Review code pull requests",
     "description": "Review and merge pending PRs from team members",
+    "notes": "",
     "priority": "high",
     "dueDate": "2024-01-19",
     "categoryId": "2",
@@ -65,10 +71,11 @@
     "createdAt": "2024-01-16T09:00:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 7,
     "title": "Plan weekend getaway",
     "description": "Research destinations and book accommodation",
+    "notes": "",
     "priority": "low",
     "dueDate": "2024-01-28",
     "categoryId": "3",
@@ -76,10 +83,11 @@
     "createdAt": "2024-01-12T16:00:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 8,
     "title": "Respond to client emails",
     "description": "Answer pending questions from clients about project timeline",
+    "notes": "",
     "priority": "high",
     "dueDate": "2024-01-18",
     "categoryId": "2",
@@ -87,10 +95,11 @@
     "createdAt": "2024-01-15T13:00:00.000Z",
     "completedAt": "2024-01-17T10:00:00.000Z"
   },
-  {
+{
     "Id": 9,
     "title": "Organize desk workspace",
     "description": "Clean and organize desk area for better productivity",
+    "notes": "",
     "priority": "low",
     "dueDate": null,
     "categoryId": "3",
@@ -98,10 +107,11 @@
     "createdAt": "2024-01-14T17:00:00.000Z",
     "completedAt": null
   },
-  {
+{
     "Id": 10,
     "title": "Submit expense report",
     "description": "Compile receipts and submit monthly expense report",
+    "notes": "",
     "priority": "medium",
     "dueDate": "2024-01-23",
     "categoryId": "2",

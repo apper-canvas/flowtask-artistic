@@ -5,7 +5,6 @@ import { cn } from "@/utils/cn";
 import ApperIcon from "@/components/ApperIcon";
 import Checkbox from "@/components/atoms/Checkbox";
 import Badge from "@/components/atoms/Badge";
-
 const TaskCard = ({ task, onToggle, onEdit, onDelete, categoryColor }) => {
   const [isCompleting, setIsCompleting] = useState(false);
 
@@ -103,10 +102,16 @@ const TaskCard = ({ task, onToggle, onEdit, onDelete, categoryColor }) => {
             </p>
           )}
           
-          <div className="flex items-center gap-2 flex-wrap">
+<div className="flex items-center gap-2 flex-wrap">
             <Badge variant={priorityBadge.variant}>
               {priorityBadge.label}
             </Badge>
+            {task.notes && (
+              <Badge variant="default">
+                <ApperIcon name="FileText" size={12} className="mr-1" />
+                Notes
+              </Badge>
+            )}
             {dueDateInfo && (
               <Badge variant={dueDateInfo.variant}>
                 <ApperIcon name="Calendar" size={12} className="mr-1" />

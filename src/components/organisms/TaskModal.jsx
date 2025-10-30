@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
+import FormField from "@/components/molecules/FormField";
 import Input from "@/components/atoms/Input";
 import Textarea from "@/components/atoms/Textarea";
-import FormField from "@/components/molecules/FormField";
 import PrioritySelector from "@/components/molecules/PrioritySelector";
 
 const TaskModal = ({ isOpen, onClose, onSubmit, task, categories }) => {
   const [formData, setFormData] = useState({
-    title: "",
+title: "",
     description: "",
+    notes: "",
     priority: "medium",
     dueDate: "",
     categoryId: "1"
@@ -20,17 +25,19 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task, categories }) => {
 
   useEffect(() => {
     if (task) {
-      setFormData({
+setFormData({
         title: task.title,
         description: task.description || "",
+        notes: task.notes || "",
         priority: task.priority,
         dueDate: task.dueDate ? format(new Date(task.dueDate), "yyyy-MM-dd") : "",
         categoryId: task.categoryId
       });
     } else {
-      setFormData({
+setFormData({
         title: "",
         description: "",
+        notes: "",
         priority: "medium",
         dueDate: "",
         categoryId: "1"
@@ -108,14 +115,59 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task, categories }) => {
                       error={errors.title}
                     />
                   </FormField>
-
-                  <FormField label="Description">
+<FormField label="Description">
                     <Textarea
                       value={formData.description}
                       onChange={(e) => handleChange("description", e.target.value)}
                       placeholder="Add more details about this task..."
                       rows={4}
                     />
+                  </FormField>
+
+                  <FormField label="Notes (Markdown Supported)">
+                    <div className="space-y-3">
+                      <Textarea
+                        value={formData.notes}
+                        onChange={(e) => handleChange("notes", e.target.value)}
+                        placeholder="Add detailed notes using markdown formatting...&#10;&#10;Examples:&#10;# Heading&#10;**bold** *italic*&#10;- List item&#10;```code```"
+                        rows={8}
+                        className="font-mono text-sm"
+                      />
+                      {formData.notes && (
+                        <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                          <div className="text-xs font-semibold text-gray-500 mb-2 flex items-center gap-1">
+                            <ApperIcon name="Eye" size={12} />
+                            Preview
+                          </div>
+                          <div className="prose prose-sm max-w-none">
+                            <ReactMarkdown
+                              remarkPlugins={[remarkGfm]}
+                              components={{
+                                code({node, inline, className, children, ...props}) {
+                                  const match = /language-(\w+)/.exec(className || '');
+                                  return !inline && match ? (
+                                    <SyntaxHighlighter
+                                      style={tomorrow}
+                                      language={match[1]}
+                                      PreTag="div"
+                                      {...props}
+                                    >
+                                      {String(children).replace(/\n$/, '')}
+                                    </SyntaxHighlighter>
+                                  ) : (
+                                    <code className={className} {...props}>
+                                      {children}
+                                    </code>
+                                  );
+                                }
+                              }}
+                            >
+                              {formData.notes}
+                            </ReactMarkdown>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </FormField>
 
                   <FormField label="Priority">
